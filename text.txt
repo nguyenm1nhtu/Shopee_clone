@@ -1,8 +1,3 @@
 Test github tí
 
-<<<<<<< HEAD
-ha ha ha hu hu hu
-=======
 ha ha ha
-Co y de conflict
->>>>>>> 135517eba90f5283d0f31e8f61a96bb055ce597f
