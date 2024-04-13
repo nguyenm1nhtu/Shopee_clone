@@ -1,0 +1,290 @@
+:root {
+    --primary-color: #ee4d2d;
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+    --border-color: #dbdbdb;
+
+    --header-height: 120px;
+    --navbar-height: 34px;
+    --header-with-search-height: calc(var(--header-height) - var(--navbar-height));
+}
+
+* {
+    box-sizing: inherit;
+}
+
+html {
+    /* Khi để font-size 62.5% thì 1rem = 16px -> dễ tính toán */
+    font-size: 62.5%;
+
+    /*  px: đơn vị đo cụ thể không linh động -> kích thước cố định
+        và không thay dổi dựa trên kích thước màn hình
+        
+        em: đơn vị đo tương đối -> thiết lập kích thước dựa trên 
+        kích thước của phần tử cha gần nhất
+        
+        rem: một đơn vị đo tương đối giống như em, nhưng nó 
+        không phụ thuộc vào kích thước của phần tử cha trực tiếp chứa nó,
+        mà phụ thuộc vào kích thước của phần tử <html>
+    */
+    line-height: 1.6rem;
+    font-family: Roboto, Lato, Arial, sans-serif;
+
+    /*  content-box: Đây là giá trị mặc định. Kích thước của phần tử chỉ tính từ 
+        nội dung bên trong phần tử, không bao gồm padding và border.
+
+        padding-box: Kích thước của phần tử tính từ nội dung và padding, 
+        nhưng không tính border.
+
+        border-box: Kích thước của phần tử tính từ nội dung, padding và border. 
+    */
+    box-sizing: border-box;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+}
+
+.padding-5 {
+    padding: 5px;
+}
+
+/* Responsive */
+.grid {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.grid__full-width {
+    width: 100%;
+}
+
+.grid__row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -6px;
+    margin-right: -6px;
+}
+
+.grid__column-2 {
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 16.6667%;
+}
+
+.grid__column-2-4 {
+    padding-left: 6px;
+    padding-right: 6px;
+    width: 20%;
+}
+
+.grid__column-10 {
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 83.3333%;
+}
+
+.bold-text {
+    font-weight: 700;
+}
+
+.mr-t8 {
+    margin-top: 8px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes growth {
+    from {
+        transform: scale(var(--growth-from));
+    }
+
+    to {
+        transform: scale(var(--growth-to));
+    }
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    animation: fadeIn linear 0.1s;
+}
+
+.modal__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal__body {
+    --growth-from: 0.7;
+    --growth-to: 1;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+    animation: growth linear 0.1s;
+}
+
+/* Button style */
+.btn {
+    min-width: 12.4rem;
+    height: 3.4rem;
+    text-decoration: none;
+    border: none;
+    border: 3px;
+    background-color: var(--white-color);
+    font-size: 1.4rem;
+    padding: 0 12px;
+    outline: none;
+    cursor: pointer;
+    color: var(--text-color);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    border-radius: 2px;
+    line-height: 1.6rem;
+}
+
+.btn.btn--normal:hover {
+    background-color: rgba(0,0,0,0.05);
+}
+
+.btn.btn--primary:hover {
+    opacity: 0.8;
+}
+
+.btn.btn--size-s {
+    height: 3.2rem;
+    font-size: 1.2rem;
+    padding: 0 8px;
+}
+
+.btn.btn--size-m {
+    height: 3.2rem;
+    font-size: 1.2rem;
+}
+
+.btn.btn--primary {
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+
+.btn.btn--disabled {
+    color: #949494;
+    cursor: default;
+    background-color: #c3c3c3;
+}
+
+/* Selection */
+
+.select-input {
+    position: relative;
+    min-width: 20rem;
+    height: 3.4rem;
+    padding: 0 12px;
+    border-radius: 2px;
+    background-color: var(--white-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.02);
+}
+
+.select-input__label {
+    font-size: 1.4rem;
+}
+
+.select-input__icon {
+    font-size: 1.4rem;
+    color: rgb(131, 131, 131);
+    position: relative;
+    top: 1px;
+}
+
+.select-input:hover .select-input__list {
+    display: block;
+}
+
+.select-input__list {
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.2);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 2.5rem;
+    border-radius: 2px;
+    background: var(--white-color);
+    padding: 8px 16px;
+    margin-top: 6px;
+    list-style: none;
+    display: none;
+    z-index: 1;
+}
+
+.select-input__link {
+    font-size: 1.4rem;
+    color: rgba(0,0,0,0.8);
+    display: block;
+    padding: 10px 0;
+    text-decoration: none;
+}
+
+.select-input__link:hover {
+    color: var(--primary-color);
+}
+
+/* Pagination */
+
+.pagination {
+    justify-content: center;
+    list-style: none;
+}
+
+.pagination-item {
+    margin: 0 16px;
+}
+
+.pagination-item--active .pagination-item__link{
+    background-color: var(--primary-color);
+    color: var(--white-color) !important;
+}
+
+.pagination-item--active .pagination-item__link:hover {
+    background-color: #ed5c3f;
+}
+
+.pagination-item-page-number .pagination-item__link:hover{
+    color: var(--primary-color);
+}
+
+.pagination-item__link {
+    --height: 3rem;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 300;
+    color: #939393;
+    min-width: 4rem;
+    height: var(--height);
+    line-height: var(--height);
+    display: block;
+    text-align: center;
+    border-radius: 2px;
+}
