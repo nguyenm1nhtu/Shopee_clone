@@ -1,2 +1,6 @@
 Test github tí
+<<<<<<< HEAD
 haizza
+=======
+vcl
+>>>>>>> c51862061a84784b7e22fd88d5f15fddaa804cf6
