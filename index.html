@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Shopee Demo</title>
-    <link rel="stylesheet" href="./assets/css/base.css">
-    <link rel="stylesheet" href="./assets/css/main.css">
     <!-- https://cdnjs.com/libraries/normalize -->
     <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/grid.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
     <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.5.1-web/fontawesome-free-6.5.1-web/css/all.css">
-
 </head>
 
 <body>
@@ -17,8 +19,8 @@
 
         <!-- Header -->
         <header class="header">
-            <div class="grid">
-                <nav class="navbar">
+            <div class="grid wide">
+                <nav class="navbar hide-on-mobile-tablet">
                     <ul class="navbar-list">
                         <li class="navbar-item navbar-item--separate">
                             Kênh người bán
@@ -174,7 +176,13 @@
                 <!-- Searching bar -->
 
                 <div class="header-with-search">
-                    <div class="header__logo">
+                    <div class="header__back">
+                        <a href="" class="header__back-link">
+                            <i class="header__back-icon fa-solid fa-arrow-left"></i>
+                        </a>
+                    </div>
+
+                    <div class="header__logo hide-on-mobile-tablet">
                         <a href="/" class="header__logo-link">
                             <img src="./assets/img/shopee-logo/Shopee_logo.png" alt="Logo Shopee" class="header__logo-img">
                         </a>
@@ -187,11 +195,11 @@
                                 
                                 <!-- Search history -->
 
-                                <div class="header__search-history">
+                                <div class="header__search-history hide-on-mobile-tablet">
                                     <h3 class="search-history-heading">
                                         Lịch sử tìm kiếm
                                     </h3>
-                                    <ul class="search-history-list">
+                                    <ul class="search-history-list ">
                                         <li class="search-history-item">
                                             <a href="">Áo Cardigan</a>
                                         </li>
@@ -228,11 +236,16 @@
                                 <!-- End Search history -->
 
                             </div>
-                            <button class="header__search-btn">
+                            <button class="header__search-btn hide-on-mobile-tablet">
                                 <i class="header__search-btn-icon fa-solid fa-magnifying-glass"></i>
                             </button>
+
+                            <button class="header__search-camera">
+                                <i class=" fa-solid fa-camera"></i>
+                            </button>
+
                         </div>
-                        <div class="header__search-option">
+                        <div class="header__search-option hide-on-mobile-tablet hide-on-pc-low-resolution">
                             <a href="" class="header__search-option-item">Ruych</a>
                             <a href="" class="header__search-option-item">Simple Men Style</a>
                             <a href="" class="header__search-option-item">Denim Jacket</a>
@@ -246,7 +259,7 @@
                         </div>
                     </div>
 
-                    <div class="header__cart">
+                    <div class="header__cart hide-on-mobile-tablet">
                         <div class="header__cart-link">
                             <i class="header__cart-icon fa-solid fa-cart-shopping"></i>
                             <span class="header__cart-notice">3</span>
@@ -258,7 +271,6 @@
                                     Chưa có sản phẩm
                                 </span>
 
-                                
                                 <h4 class="header__cart-heading">Sản phẩm đã thêm</h4>
                                 <ul class="header__cart-list-item">
 
@@ -420,15 +432,39 @@
                             </div>
                         </div>
                     </div>
+
+                    <label for="" class="header__filter">
+                        <i class="fa-solid fa-filter"></i>
+                        <span>Lọc</span>
+                    </label>
                 </div>
             </div>
+
+            <!-- Header sort bar -->
+            <ul class="header__sort-bar">
+                <li class="header__sort-item header__sort-item--active">
+                    <a href="" class="header__sort-link">Liên quan</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Mới nhất</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Bán chạy</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">
+                        Giá
+                        <i class="header__sort-icon fa-solid fa-arrows-up-down"></i>
+                    </a>
+                </li>
+            </ul>
         </header>
 
         <!-- Container -->
         <div class="container">
-            <div class="grid">
-                <div class="grid__row content">
-                    <div class="grid__column-2">
+            <div class="grid wide">
+                <div class="row sm-gutter content">
+                    <div class="col l-2 m-0 c-0">
                         <nav class="category">
                             <h2 class="category__heading-filter">
                                 <i class="category__heading-filter-icon fa-solid fa-filter"></i>
@@ -1306,11 +1342,11 @@
                         </nav>
                     </div>
     
-                    <div class="grid__column-10">
+                    <div class="col l-10 m-12 c-12">
 
                         <!-- Home Filter -->
 
-                        <div class="home-filter">
+                        <div class="home-filter hide-on-mobile-tablet">
                             <span class="home-filter__label">Sắp Xếp Theo</span>
                             <button class="home-filter__btn btn btn--primary">Liên Quan</button>
                             <button class="home-filter__btn btn">Mới Nhất</button>
@@ -1345,14 +1381,44 @@
                             </div>
                         </div>
 
+                        <nav class="mobile-category">
+                            <ul class="mobile-category__list">
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">
+                                        <span class="mobile-category__title">Shopee Mall</span> 
+                                    </a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">
+                                        <span class="mobile-category__title">Freeship Xtra</span> 
+                                    </a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">
+                                        <span class="mobile-category__title">Shop Yêu Thích</span> 
+                                    </a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">
+                                        <span class="mobile-category__title">Miễn Phí Vận Chuyển</span> 
+                                    </a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">
+                                        <span class="mobile-category__title">Đánh giá</span> 
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+
                         <!-- Home Product -->
 
                         <div class="home-product">
-                            <div class="grid__row">
+                            <div class="row sm-gutter">
 
                                 <!-- Product Item -->
 
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product1.png);"></div>
@@ -1380,7 +1446,7 @@
                                                         <span class="home-product-item__price-old-dong">₫</span>
                                                         <span class="home-product-item__price-old">449.000</span>
                                                     </div>
-                                                    <div class="home-product-item-sale-group">
+                                                    <div class="home-product-item-sale-group hide-on-pc-low-resolution">
                                                         <span class="home-product-item-sale-percent">-7%</span>
                                                     </div>
                                                 </div>
@@ -1417,7 +1483,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product2.png);"></div>
@@ -1442,7 +1508,7 @@
                                                         <span class="home-product-item__price-old-dong">₫</span>
                                                         <span class="home-product-item__price-old">520.000</span>
                                                     </div>
-                                                    <div class="home-product-item-sale-group">
+                                                    <div class="home-product-item-sale-group hide-on-pc-low-resolution">
                                                         <span class="home-product-item-sale-percent">-41%</span>
                                                     </div>
                                                 </div>
@@ -1479,7 +1545,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product3.png);"></div>
@@ -1507,7 +1573,7 @@
                                                         <span class="home-product-item__price-old-dong">₫</span>
                                                         <span class="home-product-item__price-old">380.000</span>
                                                     </div>
-                                                    <div class="home-product-item-sale-group">
+                                                    <div class="home-product-item-sale-group hide-on-pc-low-resolution">
                                                         <span class="home-product-item-sale-percent">-41%</span>
                                                     </div>
                                                 </div>
@@ -1544,7 +1610,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product4.png);"></div>
@@ -1572,7 +1638,7 @@
                                                         <span class="home-product-item__price-old-dong">₫</span>
                                                         <span class="home-product-item__price-old">550.000</span>
                                                     </div>
-                                                    <div class="home-product-item-sale-group">
+                                                    <div class="home-product-item-sale-group hide-on-pc-low-resolution">
                                                         <span class="home-product-item-sale-percent">-47%</span>
                                                     </div>
                                                 </div>
@@ -1609,7 +1675,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product5.png);"></div>
@@ -1634,7 +1700,7 @@
                                                         <span class="home-product-item__price-old-dong">₫</span>
                                                         <span class="home-product-item__price-old">380.000</span>
                                                     </div>
-                                                    <div class="home-product-item-sale-group">
+                                                    <div class="home-product-item-sale-group hide-on-pc-low-resolution">
                                                         <span class="home-product-item-sale-percent">-27%</span>
                                                     </div>
                                                 </div>
@@ -1671,7 +1737,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product6.png);"></div>
@@ -1694,7 +1760,7 @@
                                                         <span class="home-product-item__price-old-dong">₫</span>
                                                         <span class="home-product-item__price-old">550.000</span>
                                                     </div>
-                                                    <div class="home-product-item-sale-group">
+                                                    <div class="home-product-item-sale-group hide-on-pc-low-resolution">
                                                         <span class="home-product-item-sale-percent">-35%</span>
                                                     </div>
                                                 </div>
@@ -1731,7 +1797,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product7.png);"></div>
@@ -1759,7 +1825,7 @@
                                                         <span class="home-product-item__price-old-dong">₫</span>
                                                         <span class="home-product-item__price-old">650.000</span>
                                                     </div>
-                                                    <div class="home-product-item-sale-group">
+                                                    <div class="home-product-item-sale-group hide-on-pc-low-resolution">
                                                         <span class="home-product-item-sale-percent">-35%</span>
                                                     </div>
                                                 </div>
@@ -1792,7 +1858,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product8.png);"></div>
@@ -1820,7 +1886,7 @@
                                                         <span class="home-product-item__price-old-dong">₫</span>
                                                         <span class="home-product-item__price-old">440.000</span>
                                                     </div>
-                                                    <div class="home-product-item-sale-group">
+                                                    <div class="home-product-item-sale-group hide-on-pc-low-resolution">
                                                         <span class="home-product-item-sale-percent">-34%</span>
                                                     </div>
                                                 </div>
@@ -1853,7 +1919,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product9.png);"></div>
@@ -1878,7 +1944,7 @@
                                                         <span class="home-product-item__price-old-dong">₫</span>
                                                         <span class="home-product-item__price-old">395.000</span>
                                                     </div>
-                                                    <div class="home-product-item-sale-group">
+                                                    <div class="home-product-item-sale-group hide-on-pc-low-resolution">
                                                         <span class="home-product-item-sale-percent">-28%</span>
                                                     </div>
                                                 </div>
@@ -1911,7 +1977,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product10.png);"></div>
@@ -1962,7 +2028,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product11.png);"></div>
@@ -1990,7 +2056,7 @@
                                                         <span class="home-product-item__price-old-dong">₫</span>
                                                         <span class="home-product-item__price-old">400.000</span>
                                                     </div>
-                                                    <div class="home-product-item-sale-group">
+                                                    <div class="home-product-item-sale-group hide-on-pc-low-resolution">
                                                         <span class="home-product-item-sale-percent">-50%</span>
                                                     </div>
                                                 </div>
@@ -2027,7 +2093,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product12.png);"></div>
@@ -2055,7 +2121,7 @@
                                                         <span class="home-product-item__price-old-dong">₫</span>
                                                         <span class="home-product-item__price-old">595.000</span>
                                                     </div>
-                                                    <div class="home-product-item-sale-group">
+                                                    <div class="home-product-item-sale-group hide-on-pc-low-resolution">
                                                         <span class="home-product-item-sale-percent">-46%</span>
                                                     </div>
                                                 </div>
@@ -2092,7 +2158,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product13.png);"></div>
@@ -2140,7 +2206,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product14.png);"></div>
@@ -2161,7 +2227,7 @@
                                                         <span class="home-product-item__price-old-dong">₫</span>
                                                         <span class="home-product-item__price-old">350.000</span>
                                                     </div>
-                                                    <div class="home-product-item-sale-group">
+                                                    <div class="home-product-item-sale-group hide-on-pc-low-resolution">
                                                         <span class="home-product-item-sale-percent">-49%</span>
                                                     </div>
                                                 </div>
@@ -2198,7 +2264,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product15.png);"></div>
@@ -2226,7 +2292,7 @@
                                                         <span class="home-product-item__price-old-dong">₫</span>
                                                         <span class="home-product-item__price-old">160.000</span>
                                                     </div>
-                                                    <div class="home-product-item-sale-group">
+                                                    <div class="home-product-item-sale-group hide-on-pc-low-resolution">
                                                         <span class="home-product-item-sale-percent">-52%</span>
                                                     </div>
                                                 </div>
@@ -2260,7 +2326,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product16.png);"></div>
@@ -2283,7 +2349,7 @@
                                                         <span class="home-product-item__price-old-dong">₫</span>
                                                         <span class="home-product-item__price-old">470.000</span>
                                                     </div>
-                                                    <div class="home-product-item-sale-group">
+                                                    <div class="home-product-item-sale-group hide-on-pc-low-resolution">
                                                         <span class="home-product-item-sale-percent">-23%</span>
                                                     </div>
                                                 </div>
@@ -2316,7 +2382,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product17.png);"></div>
@@ -2371,7 +2437,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product18.png);"></div>
@@ -2399,7 +2465,7 @@
                                                         <span class="home-product-item__price-old-dong">₫</span>
                                                         <span class="home-product-item__price-old">380.000</span>
                                                     </div>
-                                                    <div class="home-product-item-sale-group">
+                                                    <div class="home-product-item-sale-group hide-on-pc-low-resolution">
                                                         <span class="home-product-item-sale-percent">-48%</span>
                                                     </div>
                                                 </div>
@@ -2436,7 +2502,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product19.png);"></div>
@@ -2464,7 +2530,7 @@
                                                         <span class="home-product-item__price-old-dong">₫</span>
                                                         <span class="home-product-item__price-old">449.000</span>
                                                     </div>
-                                                    <div class="home-product-item-sale-group">
+                                                    <div class="home-product-item-sale-group hide-on-pc-low-resolution">
                                                         <span class="home-product-item-sale-percent">-7%</span>
                                                     </div>
                                                 </div>
@@ -2497,7 +2563,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product20.png);"></div>
@@ -2518,7 +2584,7 @@
                                                         <span class="home-product-item__price-old-dong">₫</span>
                                                         <span class="home-product-item__price-old">599.000</span>
                                                     </div>
-                                                    <div class="home-product-item-sale-group">
+                                                    <div class="home-product-item-sale-group hide-on-pc-low-resolution">
                                                         <span class="home-product-item-sale-percent">-38%</span>
                                                     </div>
                                                 </div>
@@ -2551,7 +2617,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product21.png);"></div>
@@ -2601,7 +2667,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product22.png);"></div>
@@ -2627,7 +2693,7 @@
                                                         <span class="home-product-item__price-old-dong">₫</span>
                                                         <span class="home-product-item__price-old">400.000</span>
                                                     </div>
-                                                    <div class="home-product-item-sale-group">
+                                                    <div class="home-product-item-sale-group hide-on-pc-low-resolution">
                                                         <span class="home-product-item-sale-percent">-43%</span>
                                                     </div>
                                                 </div>
@@ -2664,7 +2730,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product23.png);"></div>
@@ -2692,7 +2758,7 @@
                                                         <span class="home-product-item__price-old-dong">₫</span>
                                                         <span class="home-product-item__price-old">543.000</span>
                                                     </div>
-                                                    <div class="home-product-item-sale-group">
+                                                    <div class="home-product-item-sale-group hide-on-pc-low-resolution">
                                                         <span class="home-product-item-sale-percent">-48%</span>
                                                     </div>
                                                 </div>
@@ -2729,7 +2795,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product24.png);"></div>
@@ -2754,7 +2820,7 @@
                                                         <span class="home-product-item__price-old-dong">₫</span>
                                                         <span class="home-product-item__price-old">750.000</span>
                                                     </div>
-                                                    <div class="home-product-item-sale-group">
+                                                    <div class="home-product-item-sale-group hide-on-pc-low-resolution">
                                                         <span class="home-product-item-sale-percent">-25%</span>
                                                     </div>
                                                 </div>
@@ -2791,7 +2857,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product25.png);"></div>
@@ -2815,7 +2881,7 @@
                                                         <span class="home-product-item__price-old-dong">₫</span>
                                                         <span class="home-product-item__price-old">350.000</span>
                                                     </div>
-                                                    <div class="home-product-item-sale-group">
+                                                    <div class="home-product-item-sale-group hide-on-pc-low-resolution">
                                                         <span class="home-product-item-sale-percent">-20%</span>
                                                     </div>
                                                 </div>
@@ -2852,7 +2918,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product26.png);"></div>
@@ -2878,7 +2944,7 @@
                                                         <span class="home-product-item__price-old-dong">₫</span>
                                                         <span class="home-product-item__price-old">599.000</span>
                                                     </div>
-                                                    <div class="home-product-item-sale-group">
+                                                    <div class="home-product-item-sale-group hide-on-pc-low-resolution">
                                                         <span class="home-product-item-sale-percent">-33%</span>
                                                     </div>
                                                 </div>
@@ -2915,7 +2981,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product27.png);"></div>
@@ -2943,7 +3009,7 @@
                                                         <span class="home-product-item__price-old-dong">₫</span>
                                                         <span class="home-product-item__price-old">449.000</span>
                                                     </div>
-                                                    <div class="home-product-item-sale-group">
+                                                    <div class="home-product-item-sale-group hide-on-pc-low-resolution">
                                                         <span class="home-product-item-sale-percent">-13%</span>
                                                     </div>
                                                 </div>
@@ -2980,7 +3046,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product28.png);"></div>
@@ -3029,7 +3095,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product29.png);"></div>
@@ -3083,7 +3149,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product30.png);"></div>
@@ -3111,7 +3177,7 @@
                                                         <span class="home-product-item__price-old-dong">₫</span>
                                                         <span class="home-product-item__price-old">449.000</span>
                                                     </div>
-                                                    <div class="home-product-item-sale-group">
+                                                    <div class="home-product-item-sale-group hide-on-pc-low-resolution">
                                                         <span class="home-product-item-sale-percent">-7%</span>
                                                     </div>
                                                 </div>
@@ -3148,7 +3214,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product31.png);"></div>
@@ -3176,7 +3242,7 @@
                                                         <span class="home-product-item__price-old-dong">₫</span>
                                                         <span class="home-product-item__price-old">549.000</span>
                                                     </div>
-                                                    <div class="home-product-item-sale-group">
+                                                    <div class="home-product-item-sale-group hide-on-pc-low-resolution">
                                                         <span class="home-product-item-sale-percent">-10%</span>
                                                     </div>
                                                 </div>
@@ -3209,7 +3275,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product32.png);"></div>
@@ -3237,7 +3303,7 @@
                                                         <span class="home-product-item__price-old-dong">₫</span>
                                                         <span class="home-product-item__price-old">400.000</span>
                                                     </div>
-                                                    <div class="home-product-item-sale-group">
+                                                    <div class="home-product-item-sale-group hide-on-pc-low-resolution">
                                                         <span class="home-product-item-sale-percent">-50%</span>
                                                     </div>
                                                 </div>
@@ -3270,7 +3336,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product33.png);"></div>
@@ -3298,7 +3364,7 @@
                                                         <span class="home-product-item__price-old-dong">₫</span>
                                                         <span class="home-product-item__price-old">215.000</span>
                                                     </div>
-                                                    <div class="home-product-item-sale-group">
+                                                    <div class="home-product-item-sale-group hide-on-pc-low-resolution">
                                                         <span class="home-product-item-sale-percent">-43%</span>
                                                     </div>
                                                 </div>
@@ -3335,7 +3401,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product34.png);"></div>
@@ -3388,7 +3454,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product35.png);"></div>
@@ -3409,7 +3475,7 @@
                                                         <span class="home-product-item__price-old-dong">₫</span>
                                                         <span class="home-product-item__price-old">600.000</span>
                                                     </div>
-                                                    <div class="home-product-item-sale-group">
+                                                    <div class="home-product-item-sale-group hide-on-pc-low-resolution">
                                                         <span class="home-product-item-sale-percent">-43%</span>
                                                     </div>
                                                 </div>
@@ -3446,7 +3512,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product36.png);"></div>
@@ -3474,7 +3540,7 @@
                                                         <span class="home-product-item__price-old-dong">₫</span>
                                                         <span class="home-product-item__price-old">449.000</span>
                                                     </div>
-                                                    <div class="home-product-item-sale-group">
+                                                    <div class="home-product-item-sale-group hide-on-pc-low-resolution">
                                                         <span class="home-product-item-sale-percent">-11%</span>
                                                     </div>
                                                 </div>
@@ -3511,7 +3577,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product37.png);"></div>
@@ -3535,7 +3601,7 @@
                                                         <span class="home-product-item__price-old-dong">₫</span>
                                                         <span class="home-product-item__price-old">325.000</span>
                                                     </div>
-                                                    <div class="home-product-item-sale-group">
+                                                    <div class="home-product-item-sale-group hide-on-pc-low-resolution">
                                                         <span class="home-product-item-sale-percent">-42%</span>
                                                     </div>
                                                 </div>
@@ -3572,7 +3638,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product38.png);"></div>
@@ -3600,7 +3666,7 @@
                                                         <span class="home-product-item__price-old-dong">₫</span>
                                                         <span class="home-product-item__price-old">462.000</span>
                                                     </div>
-                                                    <div class="home-product-item-sale-group">
+                                                    <div class="home-product-item-sale-group hide-on-pc-low-resolution">
                                                         <span class="home-product-item-sale-percent">-14%</span>
                                                     </div>
                                                 </div>
@@ -3637,7 +3703,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product39.png);"></div>
@@ -3662,7 +3728,7 @@
                                                         <span class="home-product-item__price-old-dong">₫</span>
                                                         <span class="home-product-item__price-old">580.000</span>
                                                     </div>
-                                                    <div class="home-product-item-sale-group">
+                                                    <div class="home-product-item-sale-group hide-on-pc-low-resolution">
                                                         <span class="home-product-item-sale-percent">-5%</span>
                                                     </div>
                                                 </div>
@@ -3699,7 +3765,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product40.png);"></div>
@@ -3725,7 +3791,7 @@
                                                         <span class="home-product-item__price-old-dong">₫</span>
                                                         <span class="home-product-item__price-old">210.000</span>
                                                     </div>
-                                                    <div class="home-product-item-sale-group">
+                                                    <div class="home-product-item-sale-group hide-on-pc-low-resolution">
                                                         <span class="home-product-item-sale-percent">-24%</span>
                                                     </div>
                                                 </div>
@@ -3762,7 +3828,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product41.png);"></div>
@@ -3783,7 +3849,7 @@
                                                         <span class="home-product-item__price-old-dong">₫</span>
                                                         <span class="home-product-item__price-old">210.000</span>
                                                     </div>
-                                                    <div class="home-product-item-sale-group">
+                                                    <div class="home-product-item-sale-group hide-on-pc-low-resolution">
                                                         <span class="home-product-item-sale-percent">-33%</span>
                                                     </div>
                                                 </div>
@@ -3820,7 +3886,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product42.png);"></div>
@@ -3848,7 +3914,7 @@
                                                         <span class="home-product-item__price-old-dong">₫</span>
                                                         <span class="home-product-item__price-old">490.000</span>
                                                     </div>
-                                                    <div class="home-product-item-sale-group">
+                                                    <div class="home-product-item-sale-group hide-on-pc-low-resolution">
                                                         <span class="home-product-item-sale-percent">-20%</span>
                                                     </div>
                                                 </div>
@@ -3883,7 +3949,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product43.png);"></div>
@@ -3931,7 +3997,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product44.png);"></div>
@@ -3952,7 +4018,7 @@
                                                         <span class="home-product-item__price-old-dong">₫</span>
                                                         <span class="home-product-item__price-old">470.000</span>
                                                     </div>
-                                                    <div class="home-product-item-sale-group">
+                                                    <div class="home-product-item-sale-group hide-on-pc-low-resolution">
                                                         <span class="home-product-item-sale-percent">-27%</span>
                                                     </div>
                                                 </div>
@@ -3987,7 +4053,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product45.png);"></div>
@@ -4015,7 +4081,7 @@
                                                         <span class="home-product-item__price-old-dong">₫</span>
                                                         <span class="home-product-item__price-old">260.000</span>
                                                     </div>
-                                                    <div class="home-product-item-sale-group">
+                                                    <div class="home-product-item-sale-group hide-on-pc-low-resolution">
                                                         <span class="home-product-item-sale-percent">-29%</span>
                                                     </div>
                                                 </div>
@@ -4052,7 +4118,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product46.png);"></div>
@@ -4076,7 +4142,7 @@
                                                         <span class="home-product-item__price-old-dong">₫</span>
                                                         <span class="home-product-item__price-old">358.000</span>
                                                     </div>
-                                                    <div class="home-product-item-sale-group">
+                                                    <div class="home-product-item-sale-group hide-on-pc-low-resolution">
                                                         <span class="home-product-item-sale-percent">-50%</span>
                                                     </div>
                                                 </div>
@@ -4109,7 +4175,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product47.png);"></div>
@@ -4135,7 +4201,7 @@
                                                         <span class="home-product-item__price-old-dong">₫</span>
                                                         <span class="home-product-item__price-old">293.000</span>
                                                     </div>
-                                                    <div class="home-product-item-sale-group">
+                                                    <div class="home-product-item-sale-group hide-on-pc-low-resolution">
                                                         <span class="home-product-item-sale-percent">-23%</span>
                                                     </div>
                                                 </div>
@@ -4169,7 +4235,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product48.png);"></div>
@@ -4225,7 +4291,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product49.png);"></div>
@@ -4246,7 +4312,7 @@
                                                         <span class="home-product-item__price-old-dong">₫</span>
                                                         <span class="home-product-item__price-old">450.000</span>
                                                     </div>
-                                                    <div class="home-product-item-sale-group">
+                                                    <div class="home-product-item-sale-group hide-on-pc-low-resolution">
                                                         <span class="home-product-item-sale-percent">-34%</span>
                                                     </div>
                                                 </div>
@@ -4279,7 +4345,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product50.png);"></div>
@@ -4307,7 +4373,7 @@
                                                         <span class="home-product-item__price-old-dong">₫</span>
                                                         <span class="home-product-item__price-old">290.000</span>
                                                     </div>
-                                                    <div class="home-product-item-sale-group">
+                                                    <div class="home-product-item-sale-group hide-on-pc-low-resolution">
                                                         <span class="home-product-item-sale-percent">-35%</span>
                                                     </div>
                                                 </div>
@@ -4341,7 +4407,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product51.png);"></div>
@@ -4369,7 +4435,7 @@
                                                         <span class="home-product-item__price-old-dong">₫</span>
                                                         <span class="home-product-item__price-old">145.000</span>
                                                     </div>
-                                                    <div class="home-product-item-sale-group">
+                                                    <div class="home-product-item-sale-group hide-on-pc-low-resolution">
                                                         <span class="home-product-item-sale-percent">-4%</span>
                                                     </div>
                                                 </div>
@@ -4406,7 +4472,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product52.png);"></div>
@@ -4460,7 +4526,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product53.png);"></div>
@@ -4509,7 +4575,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product54.png);"></div>
@@ -4537,7 +4603,7 @@
                                                         <span class="home-product-item__price-old-dong">₫</span>
                                                         <span class="home-product-item__price-old">449.000</span>
                                                     </div>
-                                                    <div class="home-product-item-sale-group">
+                                                    <div class="home-product-item-sale-group hide-on-pc-low-resolution">
                                                         <span class="home-product-item-sale-percent">-16%</span>
                                                     </div>
                                                 </div>
@@ -4574,7 +4640,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product55.png);"></div>
@@ -4602,7 +4668,7 @@
                                                         <span class="home-product-item__price-old-dong">₫</span>
                                                         <span class="home-product-item__price-old">399.000</span>
                                                     </div>
-                                                    <div class="home-product-item-sale-group">
+                                                    <div class="home-product-item-sale-group hide-on-pc-low-resolution">
                                                         <span class="home-product-item-sale-percent">-48%</span>
                                                     </div>
                                                 </div>
@@ -4639,7 +4705,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product56.png);"></div>
@@ -4660,7 +4726,7 @@
                                                         <span class="home-product-item__price-old-dong">₫</span>
                                                         <span class="home-product-item__price-old">450.000</span>
                                                     </div>
-                                                    <div class="home-product-item-sale-group">
+                                                    <div class="home-product-item-sale-group hide-on-pc-low-resolution">
                                                         <span class="home-product-item-sale-percent">-50%</span>
                                                     </div>
                                                 </div>
@@ -4694,7 +4760,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product57.png);"></div>
@@ -4722,7 +4788,7 @@
                                                         <span class="home-product-item__price-old-dong">₫</span>
                                                         <span class="home-product-item__price-old">282.000</span>
                                                     </div>
-                                                    <div class="home-product-item-sale-group">
+                                                    <div class="home-product-item-sale-group hide-on-pc-low-resolution">
                                                         <span class="home-product-item-sale-percent">-37%</span>
                                                     </div>
                                                 </div>
@@ -4756,7 +4822,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product58.png);"></div>
@@ -4804,7 +4870,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product59.png);"></div>
@@ -4832,7 +4898,7 @@
                                                         <span class="home-product-item__price-old-dong">₫</span>
                                                         <span class="home-product-item__price-old">430.000</span>
                                                     </div>
-                                                    <div class="home-product-item-sale-group">
+                                                    <div class="home-product-item-sale-group hide-on-pc-low-resolution">
                                                         <span class="home-product-item-sale-percent">-33%</span>
                                                     </div>
                                                 </div>
@@ -4866,7 +4932,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <div class="home-product-wrap">
                                         <a href="" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(./assets/img/product-picture/product60.png);"></div>
@@ -4894,7 +4960,7 @@
                                                         <span class="home-product-item__price-old-dong">₫</span>
                                                         <span class="home-product-item__price-old">450.000</span>
                                                     </div>
-                                                    <div class="home-product-item-sale-group">
+                                                    <div class="home-product-item-sale-group hide-on-pc-low-resolution">
                                                         <span class="home-product-item-sale-percent">-31%</span>
                                                     </div>
                                                 </div>
@@ -4976,13 +5042,13 @@
         </div>
 
         <!-- Footer -->
-        <footer class="footer">
+        <footer class="footer hide-on-mobile">
             <div class="footer__top">
-                <div class="grid">
+                <div class="grid wide">
                     <div class="footer__about">
-                        <div class="grid__row">
+                        <div class="row">
                             
-                            <div class="grid__column-2-4 padding-5">
+                            <div class="col l-2-4 m-4 padding-5">
                                 <h3 class="footer__heading">CHĂM SÓC KHÁCH HÀNG</h3>
                                 <ul class="footer__list">
                                     <li class="footer__item">
@@ -5023,7 +5089,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="grid__column-2-4 padding-5">
+                            <div class="col l-2-4 m-4 padding-5">
                                 <h3 class="footer__heading">VỀ SHOPEE</h3>
                                 <ul class="footer__list">
                                     <li class="footer__item">
@@ -5058,7 +5124,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="grid__column-2-4 padding-5">
+                            <div class="col l-2-4 m-4 padding-5">
                                 <h3 class="footer__heading">THANH TOÁN</h3>
                                 <ul class="footer__list flex-center">
                                     <li class="footer__item footer__item-bank-box">
@@ -5123,7 +5189,7 @@
                                     </li>       
                                 </ul>
                             </div>
-                            <div class="grid__column-2-4 padding-5">
+                            <div class="col l-2-4 m-4 padding-5">
                                 <h3 class="footer__heading">THEO DÕI CHÚNG TÔI TRÊN</h3>
                                 <ul class="footer__list">
                                     <li class="footer__item">
@@ -5146,7 +5212,7 @@
                                     </li>    
                                 </ul>
                             </div>
-                            <div class="grid__column-2-4 padding-5">
+                            <div class="col l-2-4 padding-5">
                                 <h3 class="footer__heading">TẢI ỨNG DỤNG SHOPEE NGAY THÔI</h3>
                                 <div class="footer__download">
                                     <a href="" class="footer__download-qr">
@@ -5166,7 +5232,7 @@
                                 </div>
                             </div>
                             
-                            <div class="footer__id">
+                            <div class="footer__id hide-on-mobile-tablet">
                                 <div class="footer__ICP">
                                     <a href="" class="footer__ICP-link">粤ICP备17161890号</a>
                                     <span class="footer__ICP-copyright">Copyright © 2024 深圳虾皮信息技术有限责任公司. All rights reserved.</span>
@@ -5213,10 +5279,10 @@
                 </div>
             </div>
 
-            <div class="footer__bottom">
-                <div class="grid">
+            <div class="footer__bottom hide-on-mobile-tablet">
+                <div class="grid wide">
                     <div class="footer__ending">
-                        <div class="grid__row">
+                        <div class="row">
                             <div class="footer__policity flex-center">
                                 <div class="footer__policity-item">
                                     <a href="" class="footer__policity-item-link">CHÍNH SÁCH BẢO MẬT</a>
@@ -5375,7 +5441,7 @@
 
     <!-- Mini Chat -->
 
-    <div class="shopee-mini-chat">
+    <div class="shopee-mini-chat hide-on-mobile-tablet">
         <div class="shopee-mini-chat-group">
             <div class="shopee-mini-chat-quantity">5</div>
             <i class="shopee-mini-chat-icon fa-solid fa-message"></i>

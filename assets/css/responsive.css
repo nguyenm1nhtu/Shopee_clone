@@ -1,7 +1,118 @@
-@media (min-width: 740px) and (max-width: 1023px) {
+/* PC low resolution */
+@media (min-width: 1024px) and (max-width: 1239px) {
+    .hide-on-pc-low-resolution {
+        display: none;
+    }
 
+    .header__search {
+        justify-content: center;
+    }
+
+    .home-product-similar {
+        font-size: 1.2rem;
+    }
 }
 
-@media (min-width: 739px) {
-    
+
+/* Mobile & Tablet */
+@media (max-width: 1023px) {
+    :root {
+        --header-height: 68px;
+        --navbar-height: 0px;
+    }
+
+    .hide-on-mobile-tablet {
+        display: none;
+    }
+
+    .header__search-camera,
+    .header__back,
+    .header__filter {
+        display: block;
+    }
+
+    .header {
+        position: fixed;
+        background-image: linear-gradient(var(--white-color), var(--white-color));
+        z-index: 10;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .header__search {
+        height: 50%;
+        border: 2px solid var(--primary-color);
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+    .mobile-category {
+        display: block;
+    }
+
+    /* .header__cart-list {
+        position: fixed;
+        top: var(--header-height);
+        right: 0;
+        width: 100%;
+        padding: 0 calc((100% - 644px) / 2);
+    }
+
+    .header__cart-list::after {
+        display: none;
+    } */
+
+    .header__sort-bar {
+        display: flex;
+    }
+
+    .container {
+        margin-top: calc(var(--header-height) + var(--header-sort-bar-height));
+    }
+
+    .home-product-wrap:hover .home-product-similar {
+        display: none;
+    }
+
+    .home-product-wrap:hover {
+        border: 1px solid var(--border-color);
+    }
+
+    .content {
+        padding-top: 8px;
+    }
+}
+
+/* Tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+    .hide-on-tablet {
+        display: none;
+    }
+
+    /* .header__cart {
+        text-align: right;
+        width: 8rem;
+    } */
+}
+
+/* Mobile */
+@media (max-width: 739px) {
+    .hide-on-mobile {
+        display: none;
+    }
+
+    .pagination-item {
+        margin: 0;
+    }
+
+    .pagination-item__link {
+        --height: 2.8rem;
+        font-size: 1.6rem;
+        min-width: 3.6rem;
+    }
+
+    .content {
+        margin: 0 4px;
+    }
 }

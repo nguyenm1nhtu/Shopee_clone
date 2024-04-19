@@ -8,6 +8,7 @@
     --header-height: 120px;
     --navbar-height: 34px;
     --header-with-search-height: calc(var(--header-height) - var(--navbar-height));
+    --header-sort-bar-height: 46px;
 } 
 
 
@@ -16,30 +17,9 @@
 }
 
 html {
-    /* Khi để font-size 62.5% thì 1rem = 16px -> dễ tính toán */
     font-size: 62.5%;
-
-    /*  px: đơn vị đo cụ thể không linh động -> kích thước cố định
-        và không thay dổi dựa trên kích thước màn hình
-        
-        em: đơn vị đo tương đối -> thiết lập kích thước dựa trên 
-        kích thước của phần tử cha gần nhất
-        
-        rem: một đơn vị đo tương đối giống như em, nhưng nó 
-        không phụ thuộc vào kích thước của phần tử cha trực tiếp chứa nó,
-        mà phụ thuộc vào kích thước của phần tử <html>
-    */
     line-height: 1.6rem;
     font-family: Roboto, Lato, Arial, sans-serif;
-
-    /*  content-box: Đây là giá trị mặc định. Kích thước của phần tử chỉ tính từ 
-        nội dung bên trong phần tử, không bao gồm padding và border.
-
-        padding-box: Kích thước của phần tử tính từ nội dung và padding, 
-        nhưng không tính border.
-
-        border-box: Kích thước của phần tử tính từ nội dung, padding và border. 
-    */
     box-sizing: border-box;
 }
 
@@ -50,42 +30,6 @@ html {
 
 .padding-5 {
     padding: 5px;
-}
-
-/* Responsive */
-.grid {
-    width: 1200px;
-    max-width: 100%;
-    margin: 0 auto;
-}
-
-.grid__full-width {
-    width: 100%;
-}
-
-.grid__row {
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: -6px;
-    margin-right: -6px;
-}
-
-.grid__column-2 {
-    padding-left: 12px;
-    padding-right: 12px;
-    width: 16.6667%;
-}
-
-.grid__column-2-4 {
-    padding-left: 6px;
-    padding-right: 6px;
-    width: 20%;
-}
-
-.grid__column-10 {
-    padding-left: 12px;
-    padding-right: 12px;
-    width: 83.3333%;
 }
 
 .bold-text {
