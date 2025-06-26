@@ -2,24 +2,12 @@
 
 ## PC
 
-![Trang chủ](client/my-next-app/public/demo/demo1.png)
+![PC](assets/img/demo/demo1.png)
 
-## Đặt bàn
+## Tablet
 
-![Đặt bàn](client/my-next-app/public/demo/demo4.png)
+![Tablet](assets/img/demo/demo2.png)
 
-## Thực đơn
+## Mobile
 
-![Thực đơn](client/my-next-app/public/demo/demo2.png)
-
-## Đặt món
-
-![Đặt món](client/my-next-app/public/demo/demo3.png)
-
-## Giỏ hàng
-
-![Giỏ hàng](client/my-next-app/public/demo/demo5.png)
-
-## Thông tin tài khoản
-
-![Thông tin tài khoản](client/my-next-app/public/demo/demo6.png)
+![Mobile](assets/img/demo/demo3.png)
